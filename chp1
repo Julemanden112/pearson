@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The World of Work: An Organizational Behavior Infographic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 300px;
+        }
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <header class="bg-[#00A0B0] text-white p-8 text-center sticky top-0 z-10 shadow-lg">
+        <h1 class="text-4xl md:text-5xl font-black text-shadow">Understanding The World of Work</h1>
+        <p class="mt-2 text-lg md:text-xl max-w-3xl mx-auto">An Infographic on Organizational Behavior: The People-Powered Science of Success</p>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8 mt-8">
+
+        <section class="bg-white rounded-lg shadow-xl p-6 md:p-8 mb-8 text-center">
+            <h2 class="text-3xl font-bold text-[#6A4A3C] mb-4">What is Organizational Behavior (OB)?</h2>
+            <p class="text-lg max-w-4xl mx-auto mb-6">OB is the study of how <span class="font-bold text-[#CC333F]">individuals, groups, and structure</span> impact behavior within organizations. The goal is simple: apply this knowledge to make organizations more effective. It replaces gut feelings with a systematic, evidence-based approach to management.</p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                <div class="bg-gray-50 p-4 rounded-lg"><span class="text-3xl">💡</span><p class="font-bold">Improves Decisions</p></div>
+                <div class="bg-gray-50 p-4 rounded-lg"><span class="text-3xl">💬</span><p class="font-bold">Boosts Communication</p></div>
+                <div class="bg-gray-50 p-4 rounded-lg"><span class="text-3xl">🏆</span><p class="font-bold">Attracts Top Talent</p></div>
+                <div class="bg-gray-50 p-4 rounded-lg"><span class="text-3xl">📈</span><p class="font-bold">Drives Financials</p></div>
+            </div>
+        </section>
+
+        <section class="bg-white rounded-lg shadow-xl p-6 md:p-8 mb-8">
+            <h2 class="text-3xl font-bold text-[#6A4A3C] mb-4">The Manager's Playbook: What Do They Actually Do?</h2>
+            <p class="mb-6 text-lg">Managers get things done through other people. Their role is a complex blend of planning, organizing, leading, and controlling, requiring a diverse set of skills to succeed.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="font-bold text-xl text-[#EB6841] mb-2">Four Core Activities</h3>
+                    <ul class="space-y-2">
+                        <li><span class="font-bold">Planning:</span> Defining goals and strategy.</li>
+                        <li><span class="font-bold">Organizing:</span> Structuring tasks and teams.</li>
+                        <li><span class="font-bold">Leading:</span> Motivating and directing people.</li>
+                        <li><span class="font-bold">Controlling:</span> Monitoring and correcting.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-xl text-[#EB6841] mb-2">Three Essential Skills</h3>
+                     <ul class="space-y-2">
+                        <li><span class="font-bold">Technical:</span> Specialized expertise.</li>
+                        <li><span class="font-bold">People:</span> Communication and motivation.</li>
+                        <li><span class="font-bold">Conceptual:</span> Analysis and problem-solving.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-xl text-[#EB6841] mb-2">Mintzberg's Managerial Roles</h3>
+                     <ul class="space-y-2">
+                        <li><span class="font-bold">Interpersonal:</span> Figurehead, Leader</li>
+                        <li><span class="font-bold">Informational:</span> Monitor, Spokesperson</li>
+                        <li><span class="font-bold">Decisional:</span> Entrepreneur, Negotiator</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section class="bg-white rounded-lg shadow-xl p-6 md:p-8 mb-8">
+            <h2 class="text-3xl font-bold text-[#6A4A3C] mb-4 text-center">Getting Promoted vs. Getting Results: A Surprising Divide</h2>
+            <p class="mb-6 text-lg text-center max-w-4xl mx-auto">A landmark study by Fred Luthans revealed that the managers who get promoted the fastest (<span class="font-bold text-[#CC333F]">Successful</span>) don't spend their time the same way as those who get the best results (<span class="font-bold text-[#00A0B0]">Effective</span>).</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <h3 class="font-bold text-xl mb-2">Average Manager</h3>
+                    <div class="chart-container"><canvas id="avgManagerChart"></canvas></div>
+                </div>
+                <div class="text-center">
+                    <h3 class="font-bold text-xl text-[#CC333F] mb-2">Successful Manager</h3>
+                    <div class="chart-container"><canvas id="successManagerChart"></canvas></div>
+                    <p class="text-sm mt-2 text-gray-600">Networking is the dominant activity for those who climb the ladder quickly.</p>
+                </div>
+                <div class="text-center">
+                    <h3 class="font-bold text-xl text-[#00A0B0] mb-2">Effective Manager</h3>
+                    <div class="chart-container"><canvas id="effectiveManagerChart"></canvas></div>
+                    <p class="text-sm mt-2 text-gray-600">Communication is the key activity for managers who achieve high performance and employee satisfaction.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white rounded-lg shadow-xl p-6 md:p-8 mb-8">
+            <h2 class="text-3xl font-bold text-[#6A4A3C] mb-4">Today's Workplace: New Challenges, New Opportunities</h2>
+            <p class="mb-6 text-lg">The modern organization operates in a dynamic environment. Understanding and adapting to these key trends is essential for survival and success.</p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="bg-gray-50 p-4 rounded-lg text-center border-t-4 border-[#CC333F]">
+                    <p class="text-4xl mb-2">🌍</p><h3 class="font-bold">Globalization</h3><p class="text-sm">Managing cross-cultural teams and expatriate assignments.</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg text-center border-t-4 border-[#EB6841]">
+                    <p class="text-4xl mb-2">👥</p><h3 class="font-bold">Diversity & Inclusion</h3><p class="text-sm">Leveraging a heterogeneous workforce for better outcomes.</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg text-center border-t-4 border-[#EDC951]">
+                    <p class="text-4xl mb-2">🤖</p><h3 class="font-bold">AI & Big Data</h3><p class="text-sm">Using data for decision-making while managing privacy.</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg text-center border-t-4 border-[#00A0B0]">
+                    <p class="text-4xl mb-2">⚖️</p><h3 class="font-bold">Ethics & CSR</h3><p class="text-sm">Navigating moral dilemmas and social responsibility.</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg text-center border-t-4 border-[#6A4A3C]">
+                    <p class="text-4xl mb-2">💼</p><h3 class="font-bold">The Gig Economy</h3><p class="text-sm">Managing independent workers and new work arrangements.</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg text-center border-t-4 border-[#CC333F]">
+                    <p class="text-4xl mb-2">😊</p><h3 class="font-bold">Positive Workplaces</h3><p class="text-sm">Fostering employee strengths, vitality, and resilience.</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg text-center border-t-4 border-[#EB6841]">
+                    <p class="text-4xl mb-2">📱</p><h3 class="font-bold">Technology & Social Media</h3><p class="text-sm">Handling an "always-on" culture and virtual work.</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg text-center border-t-4 border-[#EDC951]">
+                    <p class="text-4xl mb-2">🌪️</p><h3 class="font-bold">Crisis Management</h3><p class="text-sm">Leading effectively through recessions and pandemics.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white rounded-lg shadow-xl p-6 md:p-8 mb-8">
+            <h2 class="text-3xl font-bold text-[#6A4A3C] mb-4 text-center">A Framework for Understanding OB</h2>
+            <p class="mb-6 text-lg text-center max-w-4xl mx-auto">The OB model provides a roadmap for analyzing workplace behavior. It shows how initial conditions (<span class="font-bold">Inputs</span>) lead to actions (<span class="font-bold">Processes</span>), which in turn create results (<span class="font-bold">Outcomes</span>) across three interconnected levels.</p>
+            <div class="flex flex-col md:flex-row gap-4">
+                <div class="flex-1 bg-[#EDC951]/20 p-4 rounded-lg">
+                    <h3 class="font-bold text-2xl text-center text-[#6A4A3C] mb-4">Inputs</h3>
+                    <div class="bg-white p-3 rounded mb-3 shadow"><strong>Individual:</strong> Personality, Values, Diversity</div>
+                    <div class="bg-white p-3 rounded mb-3 shadow"><strong>Group:</strong> Structure, Roles, Responsibilities</div>
+                    <div class="bg-white p-3 rounded shadow"><strong>Organizational:</strong> Structure, Culture</div>
+                </div>
+                <div class="flex items-center justify-center text-5xl font-thin text-gray-400 transform rotate-90 md:rotate-0">→</div>
+                <div class="flex-1 bg-[#EB6841]/20 p-4 rounded-lg">
+                    <h3 class="font-bold text-2xl text-center text-[#6A4A3C] mb-4">Processes</h3>
+                    <div class="bg-white p-3 rounded mb-3 shadow"><strong>Individual:</strong> Motivation, Perception</div>
+                    <div class="bg-white p-3 rounded mb-3 shadow"><strong>Group:</strong> Leadership, Communication, Conflict</div>
+                    <div class="bg-white p-3 rounded shadow"><strong>Organizational:</strong> HR Management, Change</div>
+                </div>
+                <div class="flex items-center justify-center text-5xl font-thin text-gray-400 transform rotate-90 md:rotate-0">→</div>
+                 <div class="flex-1 bg-[#00A0B0]/20 p-4 rounded-lg">
+                    <h3 class="font-bold text-2xl text-center text-[#6A4A3C] mb-4">Outcomes</h3>
+                    <div class="bg-white p-3 rounded mb-3 shadow"><strong>Individual:</strong> Performance, Satisfaction</div>
+                    <div class="bg-white p-3 rounded mb-3 shadow"><strong>Group:</strong> Team Performance, Cohesion</div>
+                    <div class="bg-white p-3 rounded shadow"><strong>Organizational:</strong> Productivity, Survival</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white rounded-lg shadow-xl p-6 md:p-8">
+            <h2 class="text-3xl font-bold text-[#6A4A3C] mb-4 text-center">The OB Advantage: Skills for Any Career</h2>
+            <p class="mb-6 text-lg text-center max-w-4xl mx-auto">Regardless of your major, studying OB equips you with universal, high-demand employability skills that are critical for long-term career success.</p>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-center">
+                <div class="p-4 bg-gray-50 rounded-lg"> <p class="text-3xl">🤔</p> <p class="font-bold mt-1">Critical Thinking</p> </div>
+                <div class="p-4 bg-gray-50 rounded-lg"> <p class="text-3xl">🗣️</p> <p class="font-bold mt-1">Communication</p> </div>
+                <div class="p-4 bg-gray-50 rounded-lg"> <p class="text-3xl">🤝</p> <p class="font-bold mt-1">Collaboration</p> </div>
+                <div class="p-4 bg-gray-50 rounded-lg"> <p class="text-3xl">🎯</p> <p class="font-bold mt-1">Self-Management</p> </div>
+                <div class="p-4 bg-gray-50 rounded-lg"> <p class="text-3xl">🌱</p> <p class="font-bold mt-1">Social Responsibility</p> </div>
+                <div class="p-4 bg-gray-50 rounded-lg"> <p class="text-3xl">🧭</p> <p class="font-bold mt-1">Leadership</p> </div>
+                <div class="p-4 bg-gray-50 rounded-lg col-span-2 md:col-span-1 lg:col-span-2"> <p class="text-3xl">🚀</p> <p class="font-bold mt-1">Career Management</p> </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center p-8 mt-8 bg-[#6A4A3C] text-white">
+        <p>This infographic synthesizes key insights from Robbins & Judge's "Organizational Behavior, 19th Ed."</p>
+        <p class="text-sm mt-2 opacity-75">Visualizations created with Chart.js and Tailwind CSS. No SVG or Mermaid JS used.</p>
+    </footer>
+
+    <script>
+        const chartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        boxWidth: 15,
+                        padding: 15,
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            return Array.isArray(label) ? label.join(' ') : label;
+                        }
+                    }
+                }
+            }
+        };
+
+        const chartColors = ['#00A0B0', '#6A4A3C', '#CC333F', '#EB6841'];
+        const chartLabels = ['Traditional Mgmt', 'HR Mgmt', 'Communication', 'Networking'];
+
+        new Chart(document.getElementById('avgManagerChart'), {
+            type: 'pie',
+            data: {
+                labels: chartLabels,
+                datasets: [{ data: [32, 20, 29, 19], backgroundColor: chartColors }]
+            },
+            options: chartOptions
+        });
+
+        new Chart(document.getElementById('successManagerChart'), {
+            type: 'pie',
+            data: {
+                labels: chartLabels,
+                datasets: [{ data: [13, 11, 28, 48], backgroundColor: chartColors }]
+            },
+            options: chartOptions
+        });
+        
+        new Chart(document.getElementById('effectiveManagerChart'), {
+            type: 'pie',
+            data: {
+                labels: chartLabels,
+                datasets: [{ data: [19, 26, 44, 11], backgroundColor: chartColors }]
+            },
+            options: chartOptions
+        });
+    </script>
+</body>
+</html>
+```
